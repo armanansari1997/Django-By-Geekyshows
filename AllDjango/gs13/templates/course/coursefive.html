@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+</head>
+
+<body>
+    <!-- {% if nm %}
+        <h1>Hello {{nm}}</h1>
+    {% endif %} -->
+
+    <h2>Example 8.1</h2>
+    {% if nm and st %}
+    <h3>{{st}} Seats are available for {{nm}} course</h3>
+    {% endif %}
+
+    <h2>Example 8.2</h2>
+    {% if nm or st %}
+    <h3>{{st}} Seats are available for {{nm}} course</h3>
+    {% endif %}
+
+    <h2>Example 8.3</h2>
+    {% if not st %}
+    <h3>Seats are not available</h3>
+    {% endif %}
+
+    <h2>Example 9.1</h2>
+    {% if nm == 'Django'%}
+    <h1>Hello {{nm}}</h1>
+    {% endif %}
+
+    <h2>Example 9.2</h2>
+    {% if nm == 'Django' and st == 5%}
+    <h1>{{nm}} seats available</h1>
+    {% endif %}
+
+    <h2>Example 9.3</h2>
+    {% if nm == 'Django' or st == 5%}
+    <h1>Seats available {{st}}</h1>
+    {% endif %}
+
+    <h2>Example 9.4</h2>
+    {% if not nm == 'Django'%}
+    <h1>{{nm}} Course is not available</h1>
+    {% endif %}
+
+    <h2>Example 10.1</h2>
+    {% if nm|length >= 4%}
+    <h1>Hello {{nm}}</h1>
+    {% endif %}
+
+    <h2>if else example 1</h2>
+    {% if nm %}
+        <h3>Hello {{nm}}</h3>
+    {% else %}
+        <h3>No Course Available</h3>
+    {% endif %}
+
+    <h2>if else example 2</h2>
+    {% if nm == 'Django2'%}
+        <h3>Hello {{nm}}</h3>
+    {% else %}
+        <h3>No Course Available</h3>
+    {% endif %}
+
+    <h2>if ELIF else example 1</h2>
+    {% if nm %}
+        <h3>Hello {{nm}}</h3>
+    {% elif st %}
+        <h3>Seats {{st}}</h3>
+    {% else %}
+        <h3>No Course Available</h3>
+    {% endif %}
+
+    <h2>if ELIF else example 2</h2>
+    {% if nm == 'Django2' %}
+        <h3>Hello {{nm}}</h3>
+    {% elif st == 5 %}
+        <h3>Seats {{st}}</h3>
+    {% else %}
+        <h3>No Course Available</h3>
+    {% endif %}
+</body>
+
+</html>

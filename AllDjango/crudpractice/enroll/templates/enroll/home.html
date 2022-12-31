@@ -1,0 +1,45 @@
+{% extends 'enroll/base.html' %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block style %}
+    <style>
+        table, th, tr, td {
+            border: 1px solid black;
+        }
+    </style>
+{% endblock style %}
+
+{% block content %}
+    <form action="" method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form><br><br><br>
+    {% if stu %}
+        <h2>Student Information</h2>
+        <table>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action 1</th>
+            <th>Action 2</th>
+            {% for st in stu %}
+                <tr>
+                    <td>{{st.id}}</td>
+                    <td>{{st.name}}</td>
+                    <td>{{st.email}}</td>
+                    <td>{{st.password}}</td>
+                    <td>
+                        <a href="{% url 'updatedata' st.id %}">Edit</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'deletedata' st.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock content %}
+

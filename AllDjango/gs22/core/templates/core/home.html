@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+{% comment %} or {% endcomment %}
+{% comment %} {% extends 'core/base.html' %} {% endcomment %}
+
+{% block title %} Home {% endblock title%}
+
+{% block content %}
+    <h2>I am New Home Page {{d}} </h2>
+    {% include 'core/topcourse.html' with p="PHP" %}
+    {% include 'core/topcourse.html' with p="PyGame" %}
+    {% include 'core/topcourse.html' with p="Poly" %}
+    {% comment %} {% include 'core/topcourse.html' with p="PHP" only %} {% endcomment %}
+    {% comment %} {% include 'core/topcourse.html' %} {% endcomment %}
+{% endblock content %}
+

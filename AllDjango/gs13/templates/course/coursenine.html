@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+</head>
+<body>
+    {{dt}} <br>
+
+    {% comment %} {% for k,v in dt.items %}
+        <h3>{{k}} = {{v}}</h3>
+    {% endfor %} {% endcomment %}
+
+    {% comment %} {% for key, value in dt.items %}
+    <h3>{{key}} = {{value}}</h3>
+    {% for key, value in value.items %} <!-- here value.items-->
+        <h3>{{key}} = {{value}}</h3>
+    {% endfor %}
+    {% endfor %} {% endcomment %}
+
+    {% comment %} {% for key, value in dt.items %}
+    {% for key, value in value.items %} <!-- here value.items-->
+        <h3>{{key}} = {{value}}</h3>
+    {% endfor %}
+    {% endfor %} {% endcomment %}
+
+    {% comment %} Parent Counter Example {% endcomment %}
+    {% for key, value in dt.items %}
+    {% for key, value in value.items %} <!-- here value.items-->
+        {% comment %} {{forloop.parentloop.counter}} {{key}} = {{value}} <br> {% endcomment %}
+        {{forloop.parentloop.counter0}} {{key}} = {{value}} <br>
+    {% endfor %}
+    {% endfor %}
+</body>
+</html>

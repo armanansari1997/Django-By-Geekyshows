@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+</head>
+<body>
+    <h2>Example 1</h2>
+    <ul>
+    {% for name in names%}
+        <li>{{name}}</li>
+    {% endfor %}  
+    </ul>
+
+    <h2>Example 2</h2>
+    <ul>
+    <!-- reversed names -->
+    {% for name in names reversed%}
+        <li>{{name}}</li>
+    {% endfor %}  
+    </ul>
+
+    <h2>Example 3</h2>
+    <ul>
+    {% for name in names%}
+        <li>{{name}}</li>
+    <!-- empty -->
+    {% empty %}
+        <h3>This is empty</h3>
+    {% endfor %}  
+    </ul>
+
+    <!-- predefined for loop -->
+    <h2>Example 1</h2>
+    {%for name in names%}
+    <!-- {{forloop.counter}} {{name}} <br> -->
+    <!-- {{forloop.counter0}}{{name}} <br> -->
+    <!-- {{forloop.first}} {{name}} <br> -->
+    <!-- {{forloop.last}} {{name}} <br> -->
+    {{forloop.revcounter}} {{name}} <br>
+    <!-- {{forloop.revcounter0}} {{name}} <br> -->
+    {% endfor %}
+</body>
+</html>

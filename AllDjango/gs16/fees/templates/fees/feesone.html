@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} Added CSS File {% endcomment %}
+    <link rel="stylesheet" href="{% static 'fees/css/style.css' %}">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h2>{{cname}} Fees: {{charge}}</h2>
+    <img src="{% static 'fees/images/love.jpg' %}" alt="Love">
+    <img src="{% get_static_prefix %}fees/images/love.jpg" alt="Love">
+    <hr>
+
+    {% comment %} Added JS File {% endcomment %}
+    <form action="">
+        <input type="button" value="ClickMe" onclick="display()">
+    </form>
+    <script src="{% static 'fees/js/all.js' %}"></script>
+</body>
+</html>
